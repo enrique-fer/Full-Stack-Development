@@ -1,0 +1,89 @@
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: white;
+}
+
+p,
+li {
+    font-family: 'PT Serif', serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+.page-container {
+    width: 1260px;
+}
+
+.top-logo-bar-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 150px;
+    margin-top: 75px;
+    margin-bottom: 75px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+}
+
+.image-container img {
+    margin-top: 75px;
+    width: 120px;
+}
+
+.search-bar-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 10px;
+    
+}
+
+.search-bar-container input[type="text"] {
+    height: 90px;
+    padding: 15px;
+    border: 0px solid transparent;
+    box-shadow: 2px 3px 20px 1px rgba(0,0,0,0.1);
+    border-radius: 0.5rem;
+    color: #aea6a3;
+}
+
+.search-bar-container input[type="text"]:focus {
+    outline: none;
+    box-shadow: 2px 3px 20px 1px rgba(0,0,0,0.3);
+}
+
+.search-bar-container input::placeholder {
+    font-family: 'Font Awesome\ 5 free', Arial, Helvetica, sans-serif;
+    color: #aea6a3;
+    letter-spacing: 1px;
+}
+
+.search-bar-container p {
+    text-align: right;
+    font-size: 14px;
+    color: #c1c1c1;
+    margin-top: 20px;
+}
+
+.search-bar {
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.posts-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 150px;
+}
+
+.posts-container h3 {
+    color: #5b77e0;
+}
+
+.posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
