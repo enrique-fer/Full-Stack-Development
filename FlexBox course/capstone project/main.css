@@ -1,0 +1,99 @@
+html {
+    font-family: 'Oxygen', sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+.navigation-bar {
+    width: 100vw;
+    background-color: #415068;
+}
+
+.navigation-bar div {
+    display: none;
+}
+
+.navigation-bar .toggle,
+.navigation-bar .brand {
+    display: inline-block;
+}
+
+.links-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.link {
+    width: auto;
+    padding: 1em;
+    background-color: #223047;
+    text-align: center;
+    color: white;
+}
+
+.link a {
+    color: white;
+}
+
+.link:hover, .link:active {
+    background-color: white;
+    color: #223047;
+}
+
+.navigation-bar .brand {
+    width: 10em;
+    text-align: center;
+    padding: 1em;    
+    color: white;
+}
+
+.navigation-bar a {
+    text-decoration: none;
+}
+
+.navigation-bar .toggle {
+    padding: 1em;
+    color: black;
+}
+
+@media (min-width: 48em) {
+    .navigation-bar {
+        display: flex;
+    }
+
+    .navigation-bar div {
+        display: flex;
+    }
+
+    .navigation-bar .left, 
+    .navigation-bar .right {
+        display: flex;
+        flex: 1; 
+    }
+
+    .navigation-bar .right {
+        justify-content: flex-end;
+    }
+
+    .navigation-bar .toggle {
+        display: none;
+    }
+}
+
+@media (max-width: 48em) {
+    .navigation-bar.active .toggle {
+        background: #223047;
+        color: white;
+    }
+
+    .navigation-bar .brand {
+        text-align: left;
+    }
+
+    .navigation-bar.active div {
+        display: block;
+    }
+}

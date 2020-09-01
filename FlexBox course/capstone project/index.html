@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capstone Project</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="navigation-wrapper">
+            <div class="navigation-bar">
+                <a class="toggle" id="navHamburguer">
+                    <i class="fas fa-bars"></i>
+                </a>
+
+                <a href="#" class="brand">
+                    My Site
+                </a>
+
+                <div class="links-wrapper">
+                    <div class="left">
+                        <div class="link">
+                            <a href="#">
+                                Link 1
+                            </a>
+                        </div>
+                        
+                        <div class="link">
+                            <a href="#">
+                                Link 2
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="right">
+                        <div class="link">
+                            <a href="#">
+                                Link 3
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const navHamburguer = document.querySelector('#navHamburguer');
+    navHamburguer.addEventListener("click", (e) => {
+        navHamburguer.parentElement.classList.toggle('active');
+    })
+</script>
+
+</html>
