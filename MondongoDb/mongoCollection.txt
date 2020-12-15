@@ -1,0 +1,77 @@
+db.createCollection('books')
+
+show collections
+
+
+//Insert documents
+db.books.insert({
+	"name": "OPP Programming";
+	"publishDate": new Date(),
+	"authors": [
+		{"name": "Jon Snow"},
+		{"name": "Ned Stark"}
+	]
+})
+
+db.books.insert({
+	"name": "OPP Programming";
+	"publishDate": new Date(),
+	"authors": [
+		{"name": "Jon Snow Jr"}
+	]
+})
+
+//Insert multiple documents
+db.books.insertMany([
+	{
+		"name": "Confident Ruby",
+		"publishDate": new Date(),
+		"authors": [
+			{"name": "Avdi Grimm"}
+		]
+	}
+	{
+    		"name": "The War of Art",
+    		"publishedDate": new Date(),
+    		"authors": [
+		      {"name": "Steven Pressfield"}
+		]
+  	},
+  	{
+    		"name": "Blink",
+    		"publishedDate": new Date(),
+   	 	"authors": [
+      			{"name": "Malcolm Gladwell"}
+    		]
+  	}
+])
+
+db.books.find().pretty()
+
+db.books.find({"name": "OOP Prgramming"}).pretty()
+
+db.books.findOne({ name: "OOP Programming" } )
+
+db.books.findOne({ name: /.*deep work.*/i })
+
+db.books.insert({
+    "name": "Deep Work: Rules for Focused Success in a Distracted World",
+    "publishedDate": new Date(),
+    "authors": [
+        {"name": "Cal Newport"}
+    ]
+});
+
+db.books.insert( 
+  {
+    "name": "Deep Work: Rules for Focused Success in a Distracted World",
+    "publishedDate": new Date(),
+    "reviews": 100,
+    "authors": [
+      {"name": "Cal Newport"}
+    ]
+  }
+)
+
+db.books.find({ reviews: { $exists: true } })
+db.books.find({ reviews: { $exists: false } })
