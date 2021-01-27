@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Error Management in JavaScript</title>
+    </head>
+
+    <body>
+    </body>
+
+    <script>
+        function siteComponent(func) {
+            return func();
+        }
+
+        try {
+            //console.log(siteComponent('oops'));
+        } catch (e) {
+            console.log('An error ocurred with the siteComponent', e)
+        }
+
+        widget = () => {
+            return '<div>Hi there</div>';
+        } 
+
+        //console.log(siteComponent(widget));
+        
+        
+        class DevcampError extends Error {
+            constructor(msg = 'An error occurred', ...params) {
+                super(...params);
+
+                this.msg = msg;
+            }
+        }
+
+        try {
+            //console.log(siteComponent('oops'));
+        } catch (e) {
+            throw new DevcampError('DevcampError', e);
+        }
+
+
+        //Api connection
+        class ApiError extends Error {
+            constructor(msg = 'An api error ocurred', ...params) {
+                super(...params);
+
+                this.msg = msg;
+            }
+        }
+
+        var request = new XMLHttpRequest();
+
+        request.open('GET', 'http://api.dailysmarty.com/posts', true);
+
+        request.onload = function() {
+            if (request.status >= 200 && request.status < 400) {
+                var data = JSON.parse(request.responseText);
+                console.log(data);
+            } else {
+                throw new ApiError('ApiError', `An API error ocurred with a status code of ${request.status}`);
+            }
+        }
+
+        request.send();
+    </script>
+</html>
